@@ -1,0 +1,38 @@
+<xs:schema targetNamespace="http://www.elderscrolls.com/skyrim/character"
+	xmlns:tns="http://www.elderscrolls.com/skyrim/character" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="CharacterList" type="tns:CharacterList" />
+
+	<xs:complexType name="CharacterList">
+		<xs:sequence>
+			<xs:element name="Character" type="tns:Character" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Character">
+		<xs:sequence >
+			<xs:element name="Snapshot" type="tns:CharacterSnapshot" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+
+		<xs:attribute name="Name" type="xs:string" />
+		<xs:attribute name="Race" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="CharacterSnapshot">
+		<xs:sequence>
+			<xs:element name="StatisticValue" type="tns:StatisticValue" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="Id" type="xs:int" />
+		<xs:attribute name="Label" type="xs:string" />
+		<xs:attribute name="SaveTime" type="xs:dateTime" />
+		<xs:attribute name="Level" type="xs:int" />
+		<xs:attribute name="Location" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="StatisticValue">
+		<xs:attribute name="CategoryId" type="xs:int" />
+		<xs:attribute name="Name" type="xs:string" />
+		<xs:attribute name="Value" type="xs:int" />
+	</xs:complexType>
+
+</xs:schema>

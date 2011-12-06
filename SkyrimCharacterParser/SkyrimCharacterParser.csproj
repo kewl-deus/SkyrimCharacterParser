@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62AE7D2E-8968-4128-AD68-8994DFAA235D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SkyrimCharacterParser</RootNamespace>
+    <AssemblyName>SkyrimCharacterParser</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RawModel\Containers\DataContainer.cs" />
+    <Compile Include="Export\CsvCharacterSerializer.cs" />
+    <Compile Include="Export\CharacterSerializer.cs" />
+    <Compile Include="Export\XmlCharacterSerializer.cs" />
+    <Compile Include="Export\XmlUtils.cs" />
+    <Compile Include="RawModel\Factories\GlobalDataStubFactory.cs" />
+    <Compile Include="RawModel\Factories\GlobalDataTypeFactory.cs" />
+    <Compile Include="RawModel\Factories\MiscStatsFactory.cs" />
+    <Compile Include="RawModel\Containers\FileLocationTable.cs" />
+    <Compile Include="RawModel\Containers\GlobalData.cs" />
+    <Compile Include="RawModel\GlobalDataTypes\GlobalDataStub.cs" />
+    <Compile Include="RawModel\GlobalDataTypes\GlobalDataType.cs" />
+    <Compile Include="RawModel\GlobalDataTypes\MiscStat.cs" />
+    <Compile Include="RawModel\GlobalDataTypes\MiscStats.cs" />
+    <Compile Include="RawModel\Containers\Header.cs" />
+    <Compile Include="Model\CharacterSnapshotPartial.cs" />
+    <Compile Include="Model\skyrimcharacter.cs">
+      <DependentUpon>skyrimcharacter.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\StatisticCategory.cs" />
+    <Compile Include="Model\StatisticCategoryType.cs" />
+    <Compile Include="RawModel\Containers\PluginInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RawModel\Reader\SkyrimBinaryReader.cs" />
+    <Compile Include="CharacterParser.cs" />
+    <Compile Include="RawModel\SkyrimSavegame.cs" />
+    <Compile Include="RawModel\Reader\SkyrimSavegameReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Model\skyrimcharacter.xsd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
