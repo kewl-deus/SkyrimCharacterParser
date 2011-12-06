@@ -1,5 +1,0 @@
-U:\coding\visualstudio\SkyrimCharacterParser\SkyrimCharacterParser\obj\x86\Release\ResolveAssemblyReference.cache
-U:\coding\visualstudio\SkyrimCharacterParser\SkyrimCharacterParser\bin\Release\SkyrimCharacterParser.exe
-U:\coding\visualstudio\SkyrimCharacterParser\SkyrimCharacterParser\bin\Release\SkyrimCharacterParser.pdb
-U:\coding\visualstudio\SkyrimCharacterParser\SkyrimCharacterParser\obj\x86\Release\SkyrimCharacterParser.exe
-U:\coding\visualstudio\SkyrimCharacterParser\SkyrimCharacterParser\obj\x86\Release\SkyrimCharacterParser.pdb
