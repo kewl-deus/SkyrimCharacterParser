@@ -15,16 +15,20 @@ namespace SkyrimCharacterParser
     {
         static void Main(string[] args)
         {
-            if (args.Length < 2)
-            {
-                Console.WriteLine("usage: SkyrimParser savegamePath outputfilename.xml");
-                return;
-            }
-
             try
             {
-                string savegamePath = savegamePath = args[0];
-                string outputFilePath = args[1];
+                var myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                string savegamePath = Path.Combine(myDocuments, "my games","Skyrim","Saves");
+                if (args.Length > 0)
+                {
+                    savegamePath = args[0];
+                }
+                
+                string outputFilePath = "mySkyrimCharacters.xml";
+                if (args.Length > 1)
+                {
+                    outputFilePath = args[1];
+                }
 
                 Console.WriteLine("Reading savegames...");
 
